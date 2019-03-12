@@ -11,7 +11,7 @@ Extends js-mode to add ejson encryption support
 
 # Hooks
 
-On save, ejson files are automatically checked for the `_public_key` key, if it doesn't exist users are prompted to automatically generate one and add it to the file. It is then encrypted with ejson after bring saved to disk.
+On save, ejson files are automatically checkes for the `_public_key` key, if it doesn't exist users are prompted to automatically generate one and add it to the file. It is then encrypted with ejson after being saved to disk.
 
 # Variables
 * `ejson-binary-location` Manually specify the location of the ejson binary
