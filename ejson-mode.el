@@ -1,5 +1,4 @@
-;;; ejson-mode --- Major Mode for editing ejson files
-;;; -*- lexical-binding: t -*-
+;;; ejson-mode --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
 
 ;;; Commentary:
 "Major mode designed for editing ejson files. Automatically encrypt
