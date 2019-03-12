@@ -1,8 +1,8 @@
-;;; ejson-mode --- Mode for editing ejson files
+;;; ejson-mode --- Major Mode for editing ejson files
 ;;; -*- lexical-binding: t -*-
 
 ;;; Commentary:
-"A mode designed for editing ejson files. Automatically encrypt
+"Major mode designed for editing ejson files. Automatically encrypt
 files on save, with 'C-c C-e' bound to manually encrypting file
 without saving and 'C-c C-d' bound to decrypting the file into
 the current buffer. The variable 'ejson-keystore-location' can be
@@ -135,7 +135,7 @@ calling ejson.  If nil use the existing environment.")
     map))
 
 (define-derived-mode ejson-mode js-mode "Encrypted-JSON"
-  "A mode for editing ejson files"
+  "Major mode for editing ejson files"
   (add-hook 'before-save-hook 'ejson-generate-on-save nil t)
   (add-hook 'after-save-hook 'ejson-encrypt-on-save nil t))
 
