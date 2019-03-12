@@ -1,5 +1,5 @@
 # ejson-mode
-Emacs major mode for editing ejson files
+Emacs major mode for editing [ejson](https://github.com/Shopify/ejson) files
 
 Extends js-mode to add ejson encryption support
 

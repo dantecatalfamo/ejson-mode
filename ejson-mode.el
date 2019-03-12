@@ -1,5 +1,9 @@
 ;;; ejson-mode --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
 
+;; URL: https://github.com/dantecatalfamo/ejson-mode
+;; Version: 0.1.2
+;; Package-Requies: ((emacs "24"))
+
 ;;; Commentary:
 
 ;; Major mode designed for editing ejson files.  Automatically encrypt
