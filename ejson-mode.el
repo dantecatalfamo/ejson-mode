@@ -1,14 +1,15 @@
 ;;; ejson-mode --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
 
 ;;; Commentary:
-"Major mode designed for editing ejson files. Automatically encrypt
-files on save, with 'C-c C-e' bound to manually encrypting file
-without saving and 'C-c C-d' bound to decrypting the file into
-the current buffer. The variable 'ejson-keystore-location' can be
-used to automatically specify the location of the ejson keystore,
-and 'ejson-binary-location' can be used to manually specify the
-location of the ejson binary.  'ejson-encrypt-on-save' can be
-used to disable automatic encryption on save."
+
+;; Major mode designed for editing ejson files.  Automatically encrypt
+;; files on save, with 'C-c C-e' bound to manually encrypting file
+;; without saving and 'C-c C-d' bound to decrypting the file into
+;; the current buffer.  The variable 'ejson-keystore-location' can be
+;; used to automatically specify the location of the ejson keystore,
+;; and 'ejson-binary-location' can be used to manually specify the
+;; location of the ejson binary.  'ejson-encrypt-on-save' can be
+;; used to disable automatic encryption on save."
 
 ;;; Code:
 
