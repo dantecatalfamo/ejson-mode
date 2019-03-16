@@ -1,4 +1,4 @@
-;;; ejson-mode --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
+;;; ejson-mode.el --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
 
 ;; URL: https://github.com/dantecatalfamo/ejson-mode
 ;; Version: 0.1.2
@@ -138,6 +138,7 @@ calling ejson.  If nil use the existing environment.")
     (define-key map (kbd "C-c C-e") 'ejson-encrypt-and-reload)
     map))
 
+;;;###autoload
 (define-derived-mode ejson-mode js-mode "Encrypted-JSON"
   "Major mode for editing ejson files"
   (add-hook 'before-save-hook 'ejson-generate-on-save nil t)
@@ -148,4 +149,4 @@ calling ejson.  If nil use the existing environment.")
 (add-to-list 'auto-mode-alist '("\\.ejson\\'" . ejson-mode))
 
 (provide 'ejson-mode)
-;;; ejson-mode ends here
+;;; ejson-mode.el ends here
