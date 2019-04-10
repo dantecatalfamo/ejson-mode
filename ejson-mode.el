@@ -108,8 +108,7 @@ calling ejson.  If nil use the existing environment.")
 (defun ejson-prompt-generate-key ()
   "Check if the current buffer has a public key, and prompt the user to generate one if it doesn't."
   (interactive)
-  (if (ejson-get-buffer-key)
-      t
+  (unless (ejson-get-buffer-key)
     (if (y-or-n-p (concat (buffer-name) " has no encryption key, generate one?"))
         (ejson-insert-key (ejson-generate-key))
       (message "Cannot encrypt %s without a key" (buffer-name)))))
