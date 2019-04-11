@@ -4,7 +4,7 @@ Emacs major mode for editing [ejson](https://github.com/Shopify/ejson) files
 Extends js-mode to add ejson encryption support
 
 # Default Keybindings
-* `C-c C-e` Encrypt the saved file maually (run on save by default)
+* `C-c C-e` Encrypt the saved file (run on save by default)
 * `C-c C-d` Decrypt the file into the current buffer
 
 # Hooks
