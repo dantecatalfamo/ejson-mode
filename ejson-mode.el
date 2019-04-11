@@ -47,12 +47,12 @@ calling ejson.  If nil use the existing environment.")
 
 
 (defun ejson--replace-buffer (string)
-  "Helper function, replace the contents of a buffer with STRING."
+  "Helper function, replace the contents of the current buffer with STRING."
   (erase-buffer)
   (insert string))
 
 (defun ejson-run-command (args)
-  "Run the ejson command with the ARGS argument."
+  "Run the ejson command with the ARGS arguments."
   (when ejson-keystore-location
     (setenv "EJSON_KEYDIR" ejson-keystore-location))
   (if (eq 0 (shell-command (concat (or ejson-binary-location "ejson")
@@ -75,7 +75,7 @@ calling ejson.  If nil use the existing environment.")
 
 
 (defun ejson-decrypt-file (path)
-  "Use ejson to decrypt a file at PATH."
+  "Use ejson to decrypt a file at PATH and return it as a string."
   (ejson-run-command (concat "decrypt " path)))
 
 
@@ -98,7 +98,8 @@ calling ejson.  If nil use the existing environment.")
 
 
 (defun ejson-encrypt-and-reload ()
-  "Use ejson to encrypt file used by current buffer, then reload the file."
+  "Use ejson to encrypt file used by current buffer, then reload.
+Does not automatically save the buffer before encryption."
   (interactive)
   (ejson-encrypt-file (buffer-file-name))
   (revert-buffer t t)
@@ -115,7 +116,7 @@ calling ejson.  If nil use the existing environment.")
 
 
 (defun ejson-decrypt-in-buffer ()
-  "Decrypt the contents of the ejson file into the current buffer."
+  "Decrypt the contents of the open ejson file, replacing the buffer's contents."
   (interactive)
   (ejson--replace-buffer (ejson-decrypt-file (buffer-file-name)))
   (message "%s Decrypted" (buffer-name)))
