@@ -60,7 +60,7 @@ calling ejson.  If nil use the existing environment.")
                                    args)
                            ejson-output-buffer))
       (with-current-buffer ejson-output-buffer
-        (replace-regexp-in-string "\n$" "" (buffer-string)))
+        (string-trim (buffer-string)))
     (view-buffer-other-window ejson-output-buffer)))
 
 
