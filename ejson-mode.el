@@ -18,6 +18,7 @@
 ;;; Code:
 
 (require 'json)
+(require 'subr-x)
 
 
 (defun json-read-buffer ()
