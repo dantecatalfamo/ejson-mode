@@ -18,7 +18,6 @@
 ;;; Code:
 
 (require 'json)
-(require 'subr-x)
 
 
 (defun json-read-buffer ()
@@ -61,7 +60,7 @@ calling ejson.  If nil use the existing environment.")
                                    args)
                            ejson-output-buffer))
       (with-current-buffer ejson-output-buffer
-        (string-trim (buffer-string)))
+        (replace-regexp-in-string "\n$" "" (buffer-string)))
     (view-buffer-other-window ejson-output-buffer)))
 
 
