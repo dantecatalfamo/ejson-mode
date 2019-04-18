@@ -20,30 +20,42 @@
 (require 'json)
 
 
-(defun json-read-buffer ()
-  "Read the read the buffer as JSON and return it formatted as an alist."
-  (save-excursion
-    (goto-char (point-min))
-    (json-read-object)))
+(defgroup ejson-mode nil
+  "Customize variables for ejson-mode."
+  :group 'js)
 
-
-(defvar ejson-binary-location nil
+(defcustom ejson-binary-location nil
   "The location of the ejson binary.
-If nil, binary location is determined with PATH environment variable.")
+If nil, binary location is determined with PATH environment variable."
+  :type '(choice (const :tag "Get location from $PATH" nil)
+                 (file :tag "Specify location"))
+  :group 'ejson-mode)
 
 
-(defvar ejson-keystore-location nil
+(defcustom ejson-keystore-location nil
   "The location of the ejson keystore.
 Used to set the environment variable EJSON_KEYDIR when
-calling ejson.  If nil use the existing environment.")
+calling ejson.  If nil use the ejson default directory."
+  :type '(choice (const :tag "Use default location" nil)
+                 (directory :tag "Specify location"))
+  :group 'ejson-mode)
 
 
-(defvar ejson-encrypt-on-save t
-  "If non-nil, automatically encrypt ejson on save.")
+(defcustom ejson-encrypt-on-save t
+  "If non-nil, automatically encrypt ejson on save."
+  :type 'boolean
+  :group 'ejson-mode)
 
 
 (defconst ejson-output-buffer "*ejson output*"
   "Output buffer of the ejson command.")
+
+
+(defun ejson--json-read-buffer ()
+  "Read the read the buffer as JSON and return it formatted as an alist."
+  (save-excursion
+    (goto-char (point-min))
+    (json-read-object)))
 
 
 (defun ejson--replace-buffer (string)
