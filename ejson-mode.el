@@ -98,7 +98,7 @@ calling ejson.  If nil use the ejson default directory."
 
 (defun ejson-get-buffer-key ()
   "Get ejson key from current buffer."
-  (alist-get '_public_key (json-read-buffer)))
+  (alist-get '_public_key (ejson--json-read-buffer)))
 
 
 (defun ejson-insert-key (ejson-key)
