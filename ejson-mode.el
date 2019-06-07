@@ -105,7 +105,7 @@ calling ejson.  If nil use the ejson default directory."
   "Insert EJSON-KEY into the current buffer."
   (ejson--replace-buffer
    (json-encode-alist (cons (cons '_public_key ejson-key)
-                                           (json-read-buffer))))
+                                           (ejson--json-read-buffer))))
     (json-pretty-print-buffer))
 
 
