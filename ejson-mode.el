@@ -65,6 +65,11 @@ calling ejson.  If nil use the ejson default directory."
 
 (defun ejson-run-command (args)
   "Run the ejson command with the ARGS arguments."
+  (unless (if ejson-binary-location
+            (file-executable-p ejson-binary-location)
+          (executable-find "ejson"))
+    (error "Ejson executable not found"))
+
   (when ejson-keystore-location
     (setenv "EJSON_KEYDIR" ejson-keystore-location))
   (if (eq 0 (shell-command (concat (or ejson-binary-location "ejson")
