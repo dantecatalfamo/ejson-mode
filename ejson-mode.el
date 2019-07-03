@@ -1,7 +1,7 @@
 ;;; ejson-mode.el --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
 
 ;; URL: https://github.com/dantecatalfamo/ejson-mode
-;; Version: 0.3.0
+;; Version: 0.3.1
 ;; Package-Requies: ((emacs "24"))
 
 ;;; Commentary:
@@ -72,13 +72,12 @@ calling ejson.  If nil use the ejson default directory."
 
   (when ejson-keystore-location
     (setenv "EJSON_KEYDIR" ejson-keystore-location))
-  (if (eq 0 (shell-command (concat (or ejson-binary-location "ejson")
-                                   " "
-                                   args)
-                           ejson-output-buffer))
-      (with-current-buffer ejson-output-buffer
-        (replace-regexp-in-string "\n$" "" (buffer-string)))
-    (view-buffer-other-window ejson-output-buffer)))
+  (let ((ejson-binary (or ejson-binary-location "ejson")))
+    (if (eq 0 (shell-command (concat ejson-binary " " args)
+                             ejson-output-buffer))
+        (with-current-buffer ejson-output-buffer
+          (replace-regexp-in-string "\n$" "" (buffer-string)))
+      (view-buffer-other-window ejson-output-buffer))))
 
 
 (defun ejson-generate-key ()
