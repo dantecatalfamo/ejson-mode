@@ -1,8 +1,10 @@
 ;;; ejson-mode.el --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
 
+;; Author: Dante Catalfamo
+;; Version: 0.5.0
+;; Package-Requires: ((emacs "25"))
 ;; URL: https://github.com/dantecatalfamo/ejson-mode
-;; Version: 0.4.0
-;; Package-Requies: ((emacs "24"))
+;; Keywords: convenience, languages, tools
 
 ;;; Commentary:
 
@@ -20,7 +22,7 @@
 (require 'json)
 
 
-(defgroup ejson-mode nil
+(defgroup ejson nil
   "Customize variables for ejson-mode."
   :group 'js)
 
@@ -29,7 +31,7 @@
 If nil, binary location is determined with PATH environment variable."
   :type '(choice (const :tag "Get location from $PATH" nil)
                  (file :tag "Specify location"))
-  :group 'ejson-mode)
+  :group 'ejson)
 
 
 (defcustom ejson-keystore-location nil
@@ -38,13 +40,13 @@ Used to set the environment variable EJSON_KEYDIR when
 calling ejson.  If nil use the ejson default directory."
   :type '(choice (const :tag "Use default location" nil)
                  (directory :tag "Specify location"))
-  :group 'ejson-mode)
+  :group 'ejson)
 
 
 (defcustom ejson-encrypt-on-save t
   "If non-nil, automatically encrypt ejson on save."
   :type 'boolean
-  :group 'ejson-mode)
+  :group 'ejson)
 
 
 (defconst ejson-output-buffer "*ejson output*"
