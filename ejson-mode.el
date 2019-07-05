@@ -1,5 +1,7 @@
 ;;; ejson-mode.el --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
 
+;; Copyright (C) 2019 Dante Catalfamo
+
 ;; Author: Dante Catalfamo
 ;; Version: 0.5.0
 ;; Package-Requires: ((emacs "25"))
