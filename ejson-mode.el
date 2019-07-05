@@ -25,6 +25,7 @@
   "Customize variables for ejson-mode."
   :group 'js)
 
+
 (defcustom ejson-binary-location nil
   "The location of the ejson binary.
 If nil, binary location is determined with PATH environment variable."
@@ -63,6 +64,7 @@ calling ejson.  If nil use the ejson default directory."
   "Helper function, replace the contents of the current buffer with STRING."
   (erase-buffer)
   (insert string))
+
 
 (defun ejson-run-command (args)
   "Run the ejson command with the ARGS arguments."
