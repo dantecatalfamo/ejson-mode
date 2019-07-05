@@ -6,6 +6,8 @@
 ;; URL: https://github.com/dantecatalfamo/ejson-mode
 ;; Keywords: convenience, languages, tools
 
+;; This file is not part of GNU Emacs.
+
 ;;; Commentary:
 
 ;; Major mode designed for editing ejson files.  Automatically encrypt
