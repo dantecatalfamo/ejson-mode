@@ -21,6 +21,7 @@
 ;;; Default keybindings
 
 ;; C-x C-s Save and encrypt a file, generate a key if necessary
+;; C-c C-e Encrypt the saved file (run on save by default)
 ;; C-c C-d Decrypt the file into the current buffer
 
 ;;; Variables
