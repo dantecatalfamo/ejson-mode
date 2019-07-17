@@ -3,7 +3,7 @@
 ;; Copyright (C) 2019 Dante Catalfamo
 
 ;; Author: Dante Catalfamo
-;; Version: 0.5.0
+;; Version: 0.5.1
 ;; Package-Requires: ((emacs "25"))
 ;; URL: https://github.com/dantecatalfamo/ejson-mode
 ;; Keywords: convenience, languages, tools
@@ -158,8 +158,8 @@ Does not automatically save the buffer before encryption."
 
 (defvar ejson-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "C-c C-d") 'ejson-decrypt-in-buffer)
-    (define-key map (kbd "C-c C-e") 'ejson-encrypt-and-reload)
+    (define-key map (kbd "C-c C-d") #'ejson-decrypt-in-buffer)
+    (define-key map (kbd "C-c C-e") #'ejson-encrypt-and-reload)
     map))
 
 ;;;###autoload
