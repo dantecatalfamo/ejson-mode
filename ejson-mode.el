@@ -179,8 +179,8 @@ Does not automatically save the buffer before encryption."
 ;;;###autoload
 (define-derived-mode ejson-mode js-mode "Encrypted-JSON"
   "Major mode for editing ejson files"
-  (add-hook 'before-save-hook 'ejson-generate-on-save nil t)
-  (add-hook 'after-save-hook 'ejson-encrypt-on-save nil t))
+  (add-hook 'before-save-hook #'ejson-generate-on-save nil t)
+  (add-hook 'after-save-hook #'ejson-encrypt-on-save nil t))
 
 
 ;;;###autoload
