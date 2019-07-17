@@ -3,7 +3,7 @@
 ;; Copyright (C) 2019 Dante Catalfamo
 
 ;; Author: Dante Catalfamo
-;; Version: 0.5.1
+;; Version: 0.5.2
 ;; Package-Requires: ((emacs "25"))
 ;; URL: https://github.com/dantecatalfamo/ejson-mode
 ;; Keywords: convenience, languages, tools
@@ -17,6 +17,19 @@
 ;; for manual in-buffer encryption and decryption, and optional
 ;; automatic ejson encryption on save.  Location of ejson keystore and
 ;; binary can be set manually.
+
+;;; Default keybindings
+
+;; C-x C-s Save and encrypt a file, generate a key if necessary
+;; C-c C-d Decrypt the file into the current buffer
+
+;;; Variables
+
+;; All can be set through customization group ejson
+
+;; `ejson-binary-location' Manually specify the location of the ejson binary
+;; `ejson-keystore-location' Specify an alternate location for the ejson keystore
+;; `ejson-encrypt-on-save' Disable automatic encryption on save
 
 ;;; Code:
 
