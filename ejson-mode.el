@@ -88,11 +88,9 @@ calling ejson.  If nil use the ejson default directory."
             (file-executable-p ejson-binary-location)
           (executable-find "ejson"))
     (error "Ejson executable not found"))
-
   (when (get-buffer ejson-output-buffer)
     (with-current-buffer ejson-output-buffer
       (erase-buffer)))
-
   (when ejson-keystore-location
     (setenv "EJSON_KEYDIR" ejson-keystore-location))
   (let ((ejson-binary (or ejson-binary-location "ejson")))
