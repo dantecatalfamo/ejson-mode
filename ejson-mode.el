@@ -1,4 +1,4 @@
-;;; ejson-mode.el --- Major Mode for editing ejson files. -*- lexical-binding: t -*-
+;;; ejson-mode.el --- Major mode for editing ejson files. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2019 Dante Catalfamo
 
